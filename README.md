@@ -10,9 +10,10 @@
 ### Modify the implementation of the optimiser to build AlexNet
 1. Open `simulation.cc` with a text editor.
 2. locate the `main()` function.
-3. With in `main()` function definition, replace the line `build_nmt_model();` with `build_alexnet_model();`.
-4. Replace `NUM_NODES = 2;` with the corresponding nodes (1 in this case);
-5. Replace `WORKERS_PER_NODE = 4;` with the actual "workers" (physical CPUs, GPUs for computation) (2 GPUs in this case);
+3. Within `main()` function definition, replace the line `build_nmt_model();` with `build_alexnet_model();` and `config.nDims = (i >= op_global_guid - DST_LENGTH) ? 2 : 1;` with `config.nDims = (i >= op_global_guid - 3) ? 2 : 1;`.
+5. Replace `NUM_NODES = 2;` with the corresponding nodes (1 in this case).
+6. Replace `WORKERS_PER_NODE = 4;` with the actual number of "workers" (physical CPUs, GPUs for computation) (2 GPUs in this case).
+
 
 
 ### Compile the code of the optimiser
